@@ -1,0 +1,207 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #0056b3;
+  --bg-color: #f0f2f5;
+  --text-color: #444;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --hover-shadow-color: rgba(0, 0, 0, 0.15);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; /* Impede a rolagem do corpo */
+  color: var(--text-color);
+}
+
+.app {
+  max-width: 900px;
+  width: 100%;
+  height: 100%;
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px var(--shadow-color);
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.app:hover {
+  box-shadow: 0 8px 30px var(--hover-shadow-color);
+}
+
+/* Estilos para o cabeçalho */
+header {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+h1 {
+  color: #333;
+  font-size: 2em;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+h1:hover {
+  color: var(--primary-color);
+}
+
+/* Estilos para a barra de navegação */
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+nav a:hover {
+  color: var(--secondary-color);
+}
+
+/* Estilos para as seções */
+.section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Adiciona rolagem vertical na seção */
+  margin-bottom: 30px;
+}
+
+.section h2 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.8em;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.section h2:hover {
+  color: var(--secondary-color);
+}
+
+/* Estilos para os botões */
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  color: #fff;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+  outline: none;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+button svg {
+  margin-right: 8px;
+}
+
+/* Estilos para o conteúdo */
+.content {
+  background-color: var(--bg-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
+  overflow-y: auto; /* Adiciona rolagem vertical no conteúdo */
+}
+
+.content:hover {
+  background-color: #f1f1f1;
+}
+
+/* Estilos para o rodapé */
+.footer {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 20px;
+  color: #777;
+  font-size: 0.9em;
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .section h2 {
+    font-size: 1.4em;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+    justify-content: center;
+  }
+}

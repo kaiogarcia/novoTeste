@@ -1,0 +1,110 @@
+/* niveisCadastro.css */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.form-container {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  animation: fadeIn 0.5s ease;
+  text-align: left; /* Alterado para alinhar à esquerda */
+}
+
+.form-container h2 {
+  color: #333;
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus {
+  border-color: #007bff;
+}
+
+.button-container {
+  text-align: center;
+}
+
+.button-container button {
+  padding: 15px 30px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.button-container button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.button-container button:focus {
+  outline: none;
+}
+
+.button-container button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Adicionando gradiente ao botão */
+.button-container button {
+  background-image: linear-gradient(to bottom right, #007bff, #0056b3);
+}
+
+/* Adicionando estilo para o formulário responsivo */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 30px;
+  }
+
+  .form-container h2 {
+    font-size: 1.8em;
+  }
+
+  .form-group label {
+    font-size: 1.1em;
+  }
+
+  .form-group input[type="text"] {
+    font-size: 1em;
+  }
+
+  .button-container button {
+    font-size: 1em;
+  }
+}

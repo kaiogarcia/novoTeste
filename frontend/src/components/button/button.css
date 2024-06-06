@@ -1,0 +1,62 @@
+/* Outros estilos */
+
+.nivel-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+/* Cor de fundo ao passar o mouse sobre o item */
+.nivel-item:hover {
+  background-color: #f0f0f0; /* Alterar para a cor desejada */
+  border-radius: 4px;
+}
+
+.nivel-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between; /* Para garantir que os botões fiquem alinhados à direita */
+}
+
+.buttons-container {
+  display: flex;
+  gap: 0.50rem; /* Espaço entre os botões */
+}
+
+button {
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:focus {
+  outline: none;
+}
+
+.edit-button {
+  background-color: #007bff;
+}
+
+.delete-button {
+  background-color: #dc3545;
+}
+
+.save-button {
+  background-color: #28a745; /* Verde para o botão Salvar */
+}
+
+.cancel-button {
+  background-color: #6c757d; /* Cinza para o botão Cancelar */
+}

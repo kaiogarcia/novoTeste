@@ -1,0 +1,90 @@
+.list-container {
+  width: 100%;
+  margin: 0 auto;
+  max-height: 500px; /* Defina a altura máxima para a lista */
+  overflow-y: auto; /* Adicione a barra de rolagem vertical somente quando necessário */}
+
+/* Adicione mais estilos conforme necessário */
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+  white-space: nowrap; /* Para evitar que o texto quebre */
+  min-width: 150px; /* Defina uma largura mínima para as células */
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+.cell-content {
+  display: flex;
+  align-items: center;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px; /* Adiciona um espaçamento entre os botões e os elementos acima */
+}
+
+.actions button {
+  white-space: nowrap; /* Para garantir que o texto do botão não quebre */
+  flex: 1; /* Para garantir que os botões tenham o mesmo tamanho */
+  min-width: 80px; /* Define uma largura mínima para os botões */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  width: 100%; /* Para garantir que os inputs ocupem o espaço disponível */
+  box-sizing: border-box; /* Para incluir padding e border no tamanho total do input */
+}
+
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block; /* Transformar a tabela em bloco para responsividade */
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    margin: 0 0 1rem 0;
+  }
+
+  tr:nth-child(odd) {
+    background: #f4f4f4;
+  }
+
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    white-space: normal;
+    text-align: left;
+  }
+
+  td:before {
+    position: absolute;
+    top: 0;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+    content: attr(data-label);
+  }
+}
