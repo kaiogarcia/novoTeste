@@ -70,7 +70,7 @@ Instalando as dependências
 
 Iniciando o projeto
 
-    $ node index.js
+    $ node server.js
 
 Entrando na pasta
 
