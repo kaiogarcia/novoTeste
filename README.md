@@ -6,10 +6,10 @@
   
   <!-- Container para a grade de imagens -->
   <div style="display: grid; grid-template-columns: 1fr; gap: 10px;">
-    <img src="https://raw.githubusercontent.com/kaiogarcia/node-deploy/master/Captura%20de%20tela%20de%202024-06-05%2021-01-13.png" style="width: 400px; height: auto;">
-    <img src="https://raw.githubusercontent.com/kaiogarcia/node-deploy/master/Captura%20de%20tela%20de%202024-06-05%2021-02-10.png" style="width: 400px; height: auto;">
-    <img src="https://raw.githubusercontent.com/kaiogarcia/node-deploy/master/Captura%20de%20tela%20de%202024-06-05%2021-02-27.png" style="width: 400px; height: auto;">
-    <img src="https://raw.githubusercontent.com/kaiogarcia/node-deploy/master/Captura%20de%20tela%20de%202024-06-05%2021-02-58.png" style="width: 400px; height: auto;">
+    <img src="https://github.com/kaiogarcia/novoTeste/blob/master/Captura%20de%20tela%20de%202024-06-05%2021-01-13.png" style="width: 400px; height: auto;">
+    <img src="https://github.com/kaiogarcia/novoTeste/blob/master/Captura%20de%20tela%20de%202024-06-05%2021-02-10.png" style="width: 400px; height: auto;">
+    <img src="https://github.com/kaiogarcia/novoTeste/blob/master/Captura%20de%20tela%20de%202024-06-05%2021-02-27.png" style="width: 400px; height: auto;">
+    <img src="https://github.com/kaiogarcia/novoTeste/blob/master/Captura%20de%20tela%20de%202024-06-05%2021-02-58.png" style="width: 400px; height: auto;">
   </div>
 </div>
 
@@ -45,7 +45,7 @@ Este projeto consiste em uma aplicação para cadastro de desenvolvedores associ
 - [Swagger-ui-express](https://www.npmjs.com/package/swagger-ui-express)
 - [Ts-node](https://www.npmjs.com/package/ts-node)
 
-<img src="https://github.com/kaiogarcia/node-deploy/blob/master/Captura%20de%20tela%20de%202024-06-05%2021-13-31.png" style="width: 400px; height: auto;">
+<img src="https://github.com/kaiogarcia/novoTeste/blob/master/Captura%20de%20tela%20de%202024-06-05%2021-13-31.png" style="width: 400px; height: auto;">
 
 
 🔋 **Versionamento e Deploy**
