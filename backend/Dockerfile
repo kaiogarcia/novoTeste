@@ -1,17 +1,28 @@
-# Use uma imagem do Node.js como base
-FROM node:latest
+# backend/Dockerfile
 
-# Defina o diretório de trabalho dentro do contêiner
+# Use uma imagem base oficial do Node.js
+FROM node:16
+
+# Copie o package.json e yarn.lock para o diretório /backend do container
+COPY package.json yarn.lock /backend/
+
+# Defina o diretório de trabalho para /backend
 WORKDIR /backend
-
-# Copie os arquivos de configuração e dependências
-COPY package.json yarn.lock ./
 
 # Instale as dependências
 RUN yarn install
 
-# Copie o restante dos arquivos do aplicativo
-COPY . .
+# Copie o restante do código do aplicativo para /backend
+COPY . /backend/
 
-# Comando para iniciar o servidor backend
-CMD ["yarn", "start"]
+# Compile o TypeScript
+RUN yarn build
+
+# Gere o Prisma Client
+RUN npx prisma generate
+
+# Exponha a porta que a aplicação utiliza
+EXPOSE 4000
+
+# Comando para rodar a aplicação
+CMD ["node", "dist/server.js"]
