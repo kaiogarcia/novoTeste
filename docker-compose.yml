@@ -4,15 +4,37 @@ services:
   backend:
     build:
       context: ./backend
-      dockerfile: Dockerfile
     ports:
-      - "4000:4000"
-    # Adicione qualquer outra configuração necessária para o serviço do backend
-  
+      - "3001:3001"
+    volumes:
+      - ./backend:/backend
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=mysql://root:@localhost:3306/mydb?schema=public
+    depends_on:
+      - db
+
   frontend:
     build:
       context: ./frontend
-      dockerfile: Dockerfile
     ports:
-      - "3000:3000"
-    # Adicione qualquer outra configuração necessária para o serviço do frontend
+      - "4000:4000"
+    volumes:
+      - ./frontend:/frontend
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - backend
+
+  db:
+    image: mysql:8
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: mydatabase
+
+volumes:
+  db-data:
