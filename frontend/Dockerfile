@@ -1,17 +1,28 @@
-# Use uma imagem do Node.js como base
-FROM node:latest
+# frontend/Dockerfile
 
-# Defina o diretório de trabalho dentro do contêiner
+# Use uma imagem base oficial do Node.js
+FROM node:16
+
+# Copie o package.json e yarn.lock para o diretório /frontend do container
+COPY package.json yarn.lock /frontend/
+
+# Defina o diretório de trabalho para /frontend
 WORKDIR /frontend
-
-# Copie os arquivos de configuração e dependências
-COPY package.json yarn.lock ./
 
 # Instale as dependências
 RUN yarn install
 
-# Copie o restante dos arquivos do aplicativo
-COPY . .
+# Copie o restante do código do aplicativo para /frontend
+COPY . /frontend/
 
-# Comando para compilar e iniciar o aplicativo
-CMD ["yarn", "start"]
+# Compile a aplicação
+RUN yarn build
+
+# Instale o servidor web para servir a aplicação compilada
+RUN yarn global add serve
+
+# Exponha a porta que o servidor web irá utilizar
+EXPOSE 3000
+
+# Comando para rodar a aplicação
+CMD ["serve", "-s", "build", "-l", "3000"]
